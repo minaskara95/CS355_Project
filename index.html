@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script> 
+<html>
+<head>
+	<title>QC Login</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+
+
+<body>
+	
+	<div class= "logInBox">
+		<img src="img/QcLogin.png" class="QcLogin">
+		<h1>Login Here</h1>
+		<form action = "insert.php" method = "POST">
+			
+			<label>Are you an Instructor or a Student?</label>
+			<select name="options" id="options">
+				<option value="Instructor">Instructor</option>
+				<option value="Student">Student</option>
+			</select><br>
+			<p>User Name</p>
+			<input id = "username" type="text" name="username" placeholder="Enter Username">
+			<p>Password</p>
+			<input id = "password" type="password" name="password" placeholder="Enter Password">
+
+			<a href="courseManageInstructor.html">
+			<input id = "submitLogIn" type="button" name="button" value="Login">
+			</a>
+
+			<br>
+			<a href="forgotPassword.html"> Forgot Password?</a><br>
+			<a href="instructorOrStudent.html">Sign Up</a>
+		</form>
+	</div>
+	
+
+	<div id = "messages">
+		
+	</div>
+
+	
+	<script>
+		$(() => {
+			$("#submitLogIn").click(() => { 
+				var message = {name: $("#name").val(), password: $("#password").val()}
+				postMessages(message)
+			})
+			getMessages()
+		})
+
+		function addMessages(message) {
+			$("#messages").append( `<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+		}
+
+		function getMessages() {
+			$.get('http://localhost:3000/index.html', (data) => {
+				console.log(data)
+			})
+		}
+
+		
+		function postMessages(message) {
+			$.get('http://localhost:3000/index.html',message)
+		}
+	</script>
+</body>
+</head>
+</html>
+

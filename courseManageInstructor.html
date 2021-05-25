@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="courseManageInstructor.css">
+  <link rel="stylesheet" type="text/css" href="node-modules/bootstrap/dist/bootstrap.min.css">
+  <title>Course Manage Instructor View</title>
+  </head>
+  <body>
+    <div class = "courseManageInstructorBox">
+  	<header>
+      <ul id="menu">
+        <a href="courseManageInstructor.html">
+      <li class = 'QcLong'> <img src="img/QcLong.png"></li>
+      </a>
+      <a href="index.html">
+      <li id = 'logout' type="button">Logout</li>
+      </a>
+      </ul>
+  	<h1 id="className">Cource Management</h1>
+
+    <button id="buttonSearch" type="button">Search</button>
+    <input id ="search" type="text" name="searchtext" placeholder="Search For Class">
+  	</header>
+  	<main>
+      <div id="information">
+  		<h2>Information</h2>
+
+  		<ul>
+  			<li>Instructor: Mark Abramov<span id="instructior"></span></li><br>
+  			<li>ID:CS355-22<span id="classId"></span></li><br>
+  			<li>Department: Computer Science<span id="depattment"></span></li><br>
+  			<li>Semester: Spring 2021<span id="semester"></span></li><br>
+  			<li>Dead Line: 12/01/2020<span id="deadLine"></span></li><br>
+  		</ul>
+      </div>
+      <div id="description">
+  		<h2>Discription</h2>
+  		<p id="classDescription">                    
+        Internet protocol stack, analysis of representative protocols; Internet applications: client-server architecture, popular Internet application protocols, Internet application design, client side programming, server side programming, Web application and Web site design; programming projects.
+  		</p>
+      </div>
+
+      <div id="schedule">
+  		<h2>Schedule</h2>
+  		<p>
+  			355  Internet and Web Technologies 11979 54  Tue 8:00 -- 10:50 pm  Abramov
+  		</p>
+      </div>
+
+      <div id="capacity">
+  		<h2>Capacity</h2>
+  		<p id="capacityCount">0/0</p>
+  		<p>Students:</p>
+      </div>
+
+  	</main>
+  </div>
+  </body>
+
+  </html>
